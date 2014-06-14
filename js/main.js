@@ -1,9 +1,9 @@
-var matched = []
+var matched = [];
+var totalMatched = [];
 
 $(".barbarian").click(function() {
   $(this).attr("src", "img/barbarian.jpg");
   matched.push($(this).attr("class"));
-  console.log(matched)
   test();
 });
 
@@ -45,30 +45,19 @@ function test ( ) {
     $("img." + matched[0]).attr("src", "img/card-back.jpg");
     $("img." + matched[1]).attr("src", "img/card-back.jpg");
     matched = [];
-    console.log(matched)
+
   }
 
   if (matched.length == 2 && matched[0] == matched[1]) {
       alert("You got a match!");
       locked = matched;
       matched = [];
-      console.log(matched);
-      console.log(locked);
+      totalMatched.push("match");
   }
 
-  // var images = document.getElementsByTagName("img")
-  // var flipped = 0;
-  //
-  // for(i=0; i<images.length; i++) {
-  //
-  //   if ($(this).attr("src") != "image/card-back.jpg") {
-  //     flipped++;
-  //     if (flipped == 12) {
-  //       alert("YOU WON!");
-  //     };
-  //   };
-  // };
-  // flipped = 0;
+  if (totalMatched.length == 6) {
+    alert("YOU WON!");
+  };
 
 
 };
