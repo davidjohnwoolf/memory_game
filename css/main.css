@@ -7,6 +7,7 @@
   width: 880px;
   margin: 0 auto;
   padding-top: 50px;
+  padding-left: 15px;
 }
 
 img {
@@ -19,4 +20,24 @@ img {
 }
 .edge {
   margin-right: 0;
+}
+
+header {
+  width: 860px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #00bfff;
+  text-align: center;
+  margin-top: 20px;
+}
+
+footer {
+  width: 860px;
+  margin: 20px auto;
+  padding: 25px 10px;
+  border-radius: 5px;
+  background-color: #00bfff;
+  text-align: center;
+  clear: both;
 }
