@@ -1,78 +1,59 @@
+var matched = []
+
 $(".barbarian").click(function() {
   $(this).attr("src", "img/barbarian.jpg");
+  matched.push($(this).attr("class"));
+  console.log(matched)
   test();
 });
 
 $(".castle").click(function() {
   $(this).attr("src", "img/castle.jpg");
+  matched.push($(this).attr("class"));
   test();
 });
 
 $(".damsel").click(function() {
   $(this).attr("src", "img/damsel.jpg");
+  matched.push($(this).attr("class"));
   test();
 });
 
 $(".dragon").click(function() {
   $(this).attr("src", "img/dragon.jpg");
+  matched.push($(this).attr("class"));
   test();
 });
 
 $(".knight").click(function() {
   $(this).attr("src", "img/knight.jpg");
+  matched.push($(this).attr("class"));
   test();
 });
 
 $(".wizard").click(function() {
   $(this).attr("src", "img/wizard.jpg");
+  matched.push($(this).attr("class"));
   test();
 });
 
-$(".barbarian1").click(function() {
-  $(this).attr("src", "img/barbarian.jpg");
-  test();
-});
-
-$(".castle1").click(function() {
-  $(this).attr("src", "img/castle.jpg");
-  test();
-});
-
-$(".damsel1").click(function() {
-  $(this).attr("src", "img/damsel.jpg");
-  test();
-});
-
-$(".dragon1").click(function() {
-  $(this).attr("src", "img/dragon.jpg");
-  test();
-});
-
-$(".knight1").click(function() {
-  $(this).attr("src", "img/knight.jpg");
-  test();
-});
-
-$(".wizard1").click(function() {
-  $(this).attr("src", "img/wizard.jpg");
-  test();
-});
 
 function test ( ) {
-  if ( $(".barbarian").attr("src") == "img/barbarian.jpg" && $(".barbarian1").attr("src") == "img/barbarian.jpg") {
-    alert("Barb");
-  } else if ( $(".castle").attr("src") == "img/castle.jpg" && $(".castle1").attr("src") == "img/castle.jpg") {
-    alert("cast");
-  } else if ( $(".damsel").attr("src") == "img/damsel.jpg" && $(".damsel1").attr("src") == "img/damsel.jpg") {
-      alert("damsel");
-  } else if ( $(".dragon").attr("src") == "img/dragon.jpg" && $(".dragon1").attr("src") == "img/dragon.jpg") {
-      alert("drag");
-  } else if ( $(".knight").attr("src") == "img/knight.jpg" && $(".knight1").attr("src") == "img/knight.jpg") {
-      alert("knight");
-  } else if ( $(".wizard").attr("src") == "img/wizard.jpg" && $(".wizard1").attr("src") == "img/wizard.jpg") {
-    alert("wizard");
-  } else {
-    $("img").attr("src") == "img/card-back.jpg";
+
+  if (matched.length == 2 && matched[0] != matched[1]) {
+
+    $("img." + matched[0]).attr("src", "img/card-back.jpg");
+    $("img." + matched[1]).attr("src", "img/card-back.jpg");
+    matched = [];
+    console.log(matched)
+  }
+
+  if (matched.length == 2 && matched[0] == matched[1]) {
+      alert("You got a match!");
+      locked = matched;
+      matched = [];
+      console.log(matched);
+      console.log(locked);
   }
 
 };
