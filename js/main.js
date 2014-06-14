@@ -56,4 +56,19 @@ function test ( ) {
       console.log(locked);
   }
 
+  // var images = document.getElementsByTagName("img")
+  // var flipped = 0;
+  //
+  // for(i=0; i<images.length; i++) {
+  //
+  //   if ($(this).attr("src") != "image/card-back.jpg") {
+  //     flipped++;
+  //     if (flipped == 12) {
+  //       alert("YOU WON!");
+  //     };
+  //   };
+  // };
+  // flipped = 0;
+
+
 };
