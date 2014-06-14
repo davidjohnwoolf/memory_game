@@ -1,4 +1,5 @@
-var matched = []
+var matched = [];
+var totalMatched = [];
 
 $(".barbarian").click(function() {
   $(this).attr("src", "img/barbarian.jpg");
@@ -50,8 +51,11 @@ function test ( ) {
       alert("You got a match!");
       locked = matched;
       matched = [];
+      totalMatched.push("match");
   }
 
-
+  if (totalMatched.length == 6) {
+    alert("YOU WON!");
+  };
 
 };
