@@ -3,7 +3,6 @@ var matched = []
 $(".barbarian").click(function() {
   $(this).attr("src", "img/barbarian.jpg");
   matched.push($(this).attr("class"));
-  console.log(matched)
   test();
 });
 
@@ -45,15 +44,14 @@ function test ( ) {
     $("img." + matched[0]).attr("src", "img/card-back.jpg");
     $("img." + matched[1]).attr("src", "img/card-back.jpg");
     matched = [];
-    console.log(matched)
   }
 
   if (matched.length == 2 && matched[0] == matched[1]) {
       alert("You got a match!");
       locked = matched;
       matched = [];
-      console.log(matched);
-      console.log(locked);
   }
+
+
 
 };
